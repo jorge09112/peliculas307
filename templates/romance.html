@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}Romance{% endblock %}
+{% block content %}
+    <h1>peliculas de Romance</h1>
+    <ul>
+        {% for peliculas in peliculas %}
+            <li><strong>{{ peliculas.titulo }}</strong>: {{ peliculas.sinopsis }}</li>
+        {% endfor %}
+    </ul>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Ov0PdD5c7m0?si=mRnSFYew8DVjTHQr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+{% endblock %}

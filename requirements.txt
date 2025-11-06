@@ -1,0 +1,4 @@
+# gunicorn: servidor WSGI
+gunicorn
+# Flask: microframework web usado para desarrollar y ejecutar la aplicacion
+Flask

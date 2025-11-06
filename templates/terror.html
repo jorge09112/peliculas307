@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}Terror{% endblock %}
+{% block content %}
+    <h1>peliculas de Terror</h1>
+    <ul>
+        {% for peliculas in peliculas %}
+            <li><strong>{{ peliculas.titulo }}</strong>: {{ peliculas.sinopsis }}</li>
+        {% endfor %}
+    </ul>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/LlTl5PoS1cE?si=e5jYiLwniNrGnIYA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+{% endblock %}

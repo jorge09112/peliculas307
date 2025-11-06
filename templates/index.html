@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+{% block title %}Inicio{% endblock %}
+{% block content %}
+    <style>
+        :root{
+            --fondo: #0ab1ff ;
+            --texto: #000000 ;
+            --acento: #1e5aff ;
+            --card: #ffffffcc ;
+            --radio: 10px;
+        }
+        body{
+            background-color: var(--fondo);
+            font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            color: var(--texto);
+            margin: 0;
+            padding: 2rem;
+        }
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        h1{
+            font-size: 2.2rem;
+            margin-bottom: 0.25rem;
+            letter-spacing: 0.5px;
+        }
+        p{font-size: 1.05rem; margin-bottom: 1.25rem; }
+        .card{
+            background: var(--card);
+            padding: 1.25rem 1.5rem;
+            border-radius: var(--radio);
+            box-shadow: 0 6px 18px rgba(11,47,74,0.08);
+        }
+        label { display:block; margin-bottom: 0.5rem; font-weight: 600; }
+        select#categoria{
+            width: 100%;
+            max-width: 420%;
+            padding: 0.6rem 0.8rem;
+            font-size: 1rem;
+            border-radius: 8px;
+            border: 1px solid #cfe8ff;
+            background: linear-gradient(180deg,#fff,#f7fbff);
+            color: var(--texto);
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.6);
+            transition: box-shadow .15s ease, transform .08s ease;
+        }
+        select#categorita:focus{
+            outline: none;
+            box-shadow: 0 0 0 4px rgba(30,144,255,0.12);
+            transform: translateY(-1px);
+        }
+        .links{
+            margin-top: 1rem;
+            font-size: 0.95rem;
+        }
+        .links a {color: var(--acento); text-decoration: none; }
+        .links a:hover {text-decoration: underline; }
+        @media (max-width:520px){
+            body { padding: 1rem;}
+            h1 { font-size: 1.6rem;}
+        }
+    </style>
+    <main class="card">
+        <h2>Un codigo creado por Jorge Abdiel Garcia Mendoza Grupo:307</h2>
+        <h1>Bienvenido al Menu de Peliculas</h1>
+        <p>selecciona una categoria para ver las Peliculas disponibles.</p>
+        <label for="categoria">categoria:</label>
+        <select id="categoria" name="categoria" aria-label="seleccionar categoria">
+            <option value="">-- Elige la categoria --</option>
+            <option value="/suspenso">Suspenso</option>
+            <option value="/terror">Terror</option>
+            <option value="/romance">Romance</option>
+            <option value="/infantil">Infantil</option>
+            <option value="/otro">otro</option>
+
+        </select>
+
+        <div class="links">
+            <noscript>
+                <p>Si JavaScript esta desactivado, usa los enlaces: </p>
+                <ul>
+                    <li><a href="/suspenso">Suspenso</a></li>
+                    <li><a href="/terror">Terror</a></li>
+                    <li><a href="/romance">Romance</a></li>
+                    <li><a href="/infantil">Infantil</a></li>
+                </ul>
+            </noscript>
+        </div>
+    </main>
+    <script>
+        document.getElementById('categoria').addEventListener('change', function() {
+            if (this.value) window.location.href =this.value;
+        });
+    </script>
+
+{% endblock %}
